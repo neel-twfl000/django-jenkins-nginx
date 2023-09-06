@@ -1,6 +1,6 @@
 source env/bin/activate
 
-cd /home/ubuntu/test1/django-jenkins-nginx/backend
+cd /var/lib/jenkins/workspace/djangi-jenkins-nginx/backend
 
 python3 manage.py makemigrations
 python3 manage.py migrate
@@ -8,7 +8,7 @@ python3 manage.py collectstatic -- no-input
 
 echo "Migrations done"
 
-cd /home/ubuntu/test1/django-jenkins-nginx
+cd /var/lib/jenkins/workspace/djangi-jenkins-nginx
 
 sudo cp -rf gunicorn.socket /etc/systemd/system/
 sudo cp -rf gunicorn.service /etc/systemd/system/
