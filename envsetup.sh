@@ -8,6 +8,7 @@ else
 fi
 
 echo $PWD
+echo "Env Setup complete"
 source env/bin/activate
 
 echo "Requeriments Install By Pip Start"
