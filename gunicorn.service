@@ -4,15 +4,14 @@ Requires=gunicorn.socket
 After=network.target
 
 [Service]
-User=ubuntu
+User=root
 Group=www-data
 WorkingDirectory=/var/lib/jenkins/workspace/djangi-jenkins-nginx/backend
-ExecStart=/var/lib/jenkins/workspace/djangi-jenkins-nginx/env/bin/gunicorn \
-          --access-logfile - \
-          --workers 3 \
-          --timeout 600 \
-          --bind unix:/run/gunicorn.sock \
-          config.wsgi:application
+ExecStart=/var/lib/jenkins/workspace/djangi-jenkins-nginx/env/bin/gunicorn --workers 3 --log-level debug --error-logfile /var/lib/jenkins/workspace/djangi-jenkins-nginx/logs/error.log --bind unix:/run/gunicorn.sock app.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
 
 [Install]
 WantedBy=multi-user.target
