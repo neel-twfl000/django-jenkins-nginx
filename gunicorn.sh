@@ -4,9 +4,13 @@ source env/bin/activate
 
 cd /var/lib/jenkins/workspace/djangi-jenkins-nginx/backend
 
-python3 manage.py makemigrations
-python3 manage.py migrate
-python3 manage.py collectstatic -- no-input
+pip install -r requirements.txt
+
+echo "Pip Complete"
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py collectstatic -- no-input
 
 echo "Migrations done"
 
