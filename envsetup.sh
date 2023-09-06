@@ -22,7 +22,4 @@ else
     mkdir logs
     touch logs/error.log logs/access.log
 fi
-
-echo "Log Folder created done"
 sudo chmod -R 777 logs
-echo "Env Setup Finish
