@@ -11,9 +11,9 @@ echo $PWD
 echo "Env Setup complete"
 source env/bin/activate
 
-# echo "Requeriments Install By Pip Start"
-# pip3 install -r backend/requirements.txt
-# echo "Requeriments Install By Pip Success"
+echo "Requeriments Install By Pip Start"
+pip3 install -r backend/requirements.txt
+echo "Requeriments Install By Pip Success"
 
 if [ -d "logs" ] 
 then
@@ -23,7 +23,7 @@ else
     touch logs/error.log logs/access.log
 fi
 
-# echo "Log Folder created done"
-# # sudo chmod -R 777 logs
+echo "Log Folder created done"
+# sudo chmod -R 777 logs
 
-# echo "Env Setup Finish
+echo "Env Setup Finish
