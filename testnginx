@@ -4,7 +4,7 @@ server {
     charset utf-8;
     underscores_in_headers on;
 
-    error_log /var/lib/jenkins/workspace/djangi-jenkins-nginx/logs/nginx-error.log;
+    error_log /var/lib/jenkins/workspace/djangi-jenkins-nginx/logs/error.log;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {

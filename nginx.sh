@@ -1,7 +1,7 @@
-sudo cp -rf app.conf /etc/nginx/sites-available
+sudo cp -rf testnginx /etc/nginx/sites-available
 chmod 710 /var/lib/jenkins/workspace/djangi-jenkins-nginx
 
-sudo ln -s /etc/nginx/sites-available /etc/nginx/sites-enabled
+sudo ln -s /etc/nginx/sites-available/testnginx /etc/nginx/sites-enabled
 sudo nginx -t
 
 sudo systemctl start nginx
