@@ -1,5 +1,5 @@
 server {
-    server_name jenya.com;
+    server_name 3.109.152.226;
     client_max_body_size 900M;
     charset utf-8;
     underscores_in_headers on;
