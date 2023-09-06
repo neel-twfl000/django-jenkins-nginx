@@ -1,3 +1,5 @@
+echo "###################Gunicorn Process Start #####################"
+
 source env/bin/activate
 
 cd /var/lib/jenkins/workspace/djangi-jenkins-nginx/backend
