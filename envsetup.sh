@@ -28,6 +28,6 @@ fi
 echo "Log Folder created done"
 
 sudo -su root
-sudo chmod -R 777 logs
+# sudo chmod -R 777 logs
 
 echo "Env Setup Finish
