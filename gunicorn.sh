@@ -24,13 +24,13 @@ echo "$PWD"
 
 
 
-sudo systemctl daemon-reload
-echo "Gunicorn has started."
-sudo systemctl enable gunicorn
-sudo systemctl start gunicorn
-echo "Gunicorn has been enabled."
+# sudo systemctl daemon-reload
+# echo "Gunicorn has started."
+# sudo systemctl enable gunicorn
+# sudo systemctl start gunicorn
+# echo "Gunicorn has been enabled."
 
 # sudo systemctl restart gunicorn
-sudo systemctl status gunicorn
+# sudo systemctl status gunicorn
 
 echo "###############Gunicorn Setup Done ############"
