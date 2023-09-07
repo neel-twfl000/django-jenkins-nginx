@@ -13,25 +13,25 @@ echo "Migrations done"
 
 # cd /var/lib/jenkins/workspace/djangi-jenkins-nginx
 
-# sudo cp -rf gunicorn.socket /etc/systemd/system/
-# sudo cp -rf gunicorn.service /etc/systemd/system/
+sudo cp -rf gunicorn.socket /etc/systemd/system/
+sudo cp -rf gunicorn.service /etc/systemd/system/
 
 # echo "$USER"
 # echo "$PWD"
 
 
 
-# # sudo systemctl daemon-reload
+sudo systemctl daemon-reload
 # # echo "Gunicorn has started."
-# sudo systemctl enable gunicorn
-# # sudo systemctl start gunicorn
+sudo systemctl enable gunicorn
+sudo systemctl start gunicorn
 # # echo "Gunicorn has been enabled."
 
 # sudo systemctl restart gunicorn
-# sudo systemctl status gunicorn
+sudo systemctl status gunicorn
 # chmod 710 /var/lib/jenkins/workspace/django-jenkins-nginx
 source env/bin/activate
 cd /var/lib/jenkins/workspace/django-jenkins-nginx/backend/
 echo $PWD
-gunicorn --bind 0.0.0.0:8000 config.wsgi
+# gunicorn --bind 0.0.0.0:8000 config.wsgi
 echo "###############Gunicorn Setup Done ############"
