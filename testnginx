@@ -2,13 +2,13 @@
 server {
   listen 80;
   server_name 3.109.152.226;
-  error_log /var/lib/jenkins/workspace/djangi-jenkins-nginx/logs/error.log;
-  access_log /var/lib/jenkins/workspace/djangi-jenkins-nginx/logs/access.log;
+  error_log /var/lib/jenkins/workspace/django-jenkins-nginx/logs/error.log;
+  access_log /var/lib/jenkins/workspace/django-jenkins-nginx/logs/access.log;
 
   location = /favicon.ico { access_log off; log_not_found off; }
   
   location /static/ {
-    root /var/lib/jenkins/workspace/djangi-jenkins-nginx;
+    root /var/lib/jenkins/workspace/django-jenkins-nginx;
   }
 
   location / {
