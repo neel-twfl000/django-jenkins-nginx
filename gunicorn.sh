@@ -1,13 +1,10 @@
 echo "###################Gunicorn Process Start #####################"
 echo $PWD
-# source env/bin/activate
+source env/bin/activate
 
-# cd /var/lib/jenkins/workspace/djangi-jenkins-nginx/backend
-
-# pip install -r requirements.txt
-
-
-# echo "Pip Complete"
+cd /var/lib/jenkins/workspace/djangi-jenkins-nginx/backend
+pip install -r requirements.txt
+echo "Pip Complete"
 
 # python3 manage.py makemigrations
 # python3 manage.py migrate
