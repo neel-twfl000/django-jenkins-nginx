@@ -1,5 +1,5 @@
 server {
-    server_name 13.127.6.200;
+    server_name coder-i.com;
     client_max_body_size 900M;
     charset utf-8;
     underscores_in_headers on;
@@ -22,8 +22,4 @@ server {
         send_timeout                600;    
         proxy_pass http://unix:/run/gunicorn.sock;
     }
-
-
-    
-
 }
