@@ -7,10 +7,8 @@ echo "Pip Complete"
 
 python3 backend/manage.py makemigrations
 python3 backend/manage.py migrate
-python3 backend/manage.py collectstatic -- no-input
-
+python3 backend/manage.py collectstatic
 echo "Migrations done"
-
 # cd /var/lib/jenkins/workspace/djangi-jenkins-nginx
 
 sudo cp -rf gunicorn.socket /etc/systemd/system/
