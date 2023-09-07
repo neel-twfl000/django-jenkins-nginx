@@ -4,7 +4,7 @@ if [ -d "env" ]
 then
     echo "Python virtual environment exists." 
 else
-    python3 -m venv env
+    virtualenv env
 fi
 
 echo $PWD
@@ -23,3 +23,6 @@ else
     touch logs/error.log logs/access.log
 fi
 sudo chmod -R 777 logs
+python manage.py runserver 0.0.0.0:8000
+echo "Server Running"
+

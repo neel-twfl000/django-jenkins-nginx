@@ -6,6 +6,7 @@ cd /var/lib/jenkins/workspace/djangi-jenkins-nginx/backend
 
 pip install -r requirements.txt
 
+
 echo "Pip Complete"
 
 python3 manage.py makemigrations
