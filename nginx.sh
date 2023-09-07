@@ -5,7 +5,7 @@ sudo nginx -t
 # sudo systemctl start nginx
 # sudo systemctl enable nginx
 # echo "Nginx has been started"
-# sudo systemctl restart nginx
+sudo systemctl restart nginx
 sudo systemctl restart gunicorn
 sudo systemctl status nginx
 echo "Setup Done"
