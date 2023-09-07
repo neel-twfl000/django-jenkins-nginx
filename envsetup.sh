@@ -23,6 +23,7 @@ else
     touch logs/error.log logs/access.log
 fi
 sudo chmod -R 777 logs
-python manage.py runserver 0.0.0.0:8000
+
+ python backend/manage.py runserver 0.0.0.0:8000
 echo "Server Running"
 
