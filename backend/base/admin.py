@@ -4,7 +4,7 @@ from .models import Account
 
 from .forms import UserCreationForm, UserChangeForm
 
-user_fields = ('first_name', 'last_name', 'email',  'password')
+user_fields = ('first_name', 'last_name', 'email',  'password', 'profile_image')
 
 personal_fields = ( 'phone', 'last_login', 'is_active', 'is_staff', 'is_superuser')
 

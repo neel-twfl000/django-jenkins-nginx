@@ -74,7 +74,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=30, null=True)
     last_name = models.CharField(max_length=30, null=True)
     phone = models.CharField(max_length=12)
-    
+    profile_image = models.ImageField(null=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
@@ -85,10 +85,8 @@ class Account(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['first_name', 'phone']
 
     def get_full_name(self):
-
         return self.first_name
 
     def get_short_name(self):
-
         return self.first_name
        
