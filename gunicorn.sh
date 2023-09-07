@@ -1,22 +1,20 @@
 echo "###################Gunicorn Process Start #####################"
 echo $PWD
-source env/bin/activate
-
 echo "Requeriments Install By Pip Start"
 pip install -r backend/requirements.txt
 echo "Requeriments Install By Pip Success"
 echo "Pip Complete"
 
-python manage.py makemigrations
-python manage.py migrate
-python manage.py collectstatic -- no-input
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py collectstatic -- no-input
 
 echo "Migrations done"
 
 # cd /var/lib/jenkins/workspace/djangi-jenkins-nginx
 
-# sudo cp -rf gunicorn.socket /etc/systemd/system/
-# sudo cp -rf gunicorn.service /etc/systemd/system/
+sudo cp -rf gunicorn.socket /etc/systemd/system/
+sudo cp -rf gunicorn.service /etc/systemd/system/
 
 # echo "$USER"
 # echo "$PWD"
@@ -25,11 +23,12 @@ echo "Migrations done"
 
 # # sudo systemctl daemon-reload
 # # echo "Gunicorn has started."
-# # sudo systemctl enable gunicorn
+sudo systemctl enable gunicorn
 # # sudo systemctl start gunicorn
 # # echo "Gunicorn has been enabled."
 
-# # sudo systemctl restart gunicorn
-# # sudo systemctl status gunicorn
-
-# echo "###############Gunicorn Setup Done ############"
+sudo systemctl restart gunicorn
+sudo systemctl status gunicorn
+cd /var/lib/jenkins/workspace/djangi-jenkins-nginx/backend
+gunicorn --bind 0.0.0.0:8000 config.wsgi
+echo "###############Gunicorn Setup Done ############"
