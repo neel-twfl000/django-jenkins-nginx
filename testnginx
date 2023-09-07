@@ -1,21 +1,29 @@
-
 server {
-  listen 80;
-  server_name 13.127.6.200;
-  error_log /var/lib/jenkins/workspace/django-jenkins-nginx/logs/error.log;
-  access_log /var/lib/jenkins/workspace/django-jenkins-nginx/logs/access.log;
+    server_name 13.127.6.200;
+    client_max_body_size 900M;
+    charset utf-8;
+    underscores_in_headers on;
 
-  location = /favicon.ico { access_log off; log_not_found off; }
-  
-  location /static/ {
-    root /var/lib/jenkins/workspace/django-jenkins-nginx;
-  }
+    error_log /var/lib/jenkins/workspace/django-jenkins-nginx/logs/error.log;
 
-  location / {
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_pass http://unix:/run/gunicorn.sock;
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        alias /var/lib/jenkins/workspace/django-jenkins-nginx/backend/staticfiles/;
     }
+    location /media/ {
+        root /var/lib/jenkins/workspace/django-jenkins-nginx/backend;
+        client_max_body_size 900M;
+    }
+    location / {
+        include proxy_params;
+        proxy_connect_timeout       600;
+        proxy_send_timeout          600;
+        proxy_read_timeout          600;
+        send_timeout                600;    
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+
+
+    
+
 }
