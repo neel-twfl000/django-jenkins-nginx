@@ -29,6 +29,7 @@ echo "Migrations done"
 
 # sudo systemctl restart gunicorn
 # sudo systemctl status gunicorn
-cd /var/lib/jenkins/workspace/djangi-jenkins-nginx/backend
+chmod 710 /var/lib/jenkins/workspace/djangi-jenkins-nginx
+cd /var/lib/jenkins/workspace/djangi-jenkins-nginx/backend/
 gunicorn --bind 0.0.0.0:8000 config.wsgi
 echo "###############Gunicorn Setup Done ############"
